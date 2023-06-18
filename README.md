@@ -8,10 +8,10 @@ any dependencies.
 ### Link Configuration
 
     cd ~/
-	git clone https://github.com/drewdeponte/dottmux.git ~/.tmux
-    ln -s ~/.tmux/tmux.conf ~/.tmux.conf
+    git clone https://github.com/drewdeponte/dottmux.git ~/.config/tmux
+    ln -s ~/.config/tmux/tmux.conf ~/.tmux.conf
 
 ### Add Utilities to PATH
 
-Add `$HOME/.tmux/bin` to your PATH environment variable in your shell
+Add `$HOME/.config/tmux/bin` to your PATH environment variable in your shell
 configurations.
