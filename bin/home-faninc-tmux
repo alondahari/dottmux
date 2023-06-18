@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/.tmux/tmux-utils.sh
+source ~/.config/tmux/tmux-utils.sh
 
 create_default_session ~/code/viva/fan-inc "faninc" 0
 create_window_at ~/code/viva/fan-inc/faninc-api "faninc" "api-code" "zsh"
