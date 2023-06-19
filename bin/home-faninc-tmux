@@ -17,7 +17,14 @@ create_window_at ~/code/viva/fan-inc/faninc-api "faninc" "faktory-server" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-api "faninc" "faktory-workers" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-api/packages/faninc-api-shared "faninc" "faninc-api-shared" "zsh"
 
-tmux send-keys 'tmux split-window -t 1 -p 10' C-j
+tmux send-keys 'tmux splitw -t 1 -p 10 -c ~/code/viva/fan-inc/faninc-api/' C-j
 tmux send-keys -t 1 'nvim' C-j
+
+tmux send-keys 'tmux splitw -vd -t 2 -c ~/code/viva/fan-inc/faninc-api/' C-j
+tmux send-keys 'tmux splitw -hf -t 2 -c ~/code/viva/fan-inc/faninc-api/' C-j
+tmux send-keys 'tmux splitw -v -t 2 -c ~/code/viva/fan-inc/faninc-api/' C-j
+
+tmux send-keys 'tmux splitw -t 3 -p 10 -c ~/code/viva/fan-inc/faninc-flutter/' C-j
+tmux send-keys -t 3 'nvim' C-j
 
 attach_to_session "faninc"
