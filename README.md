@@ -15,3 +15,17 @@ any dependencies.
 
 Add `$HOME/.config/tmux/bin` to your PATH environment variable in your shell
 configurations.
+
+### Tmux installation
+
+Install using homebrew:
+
+```sh
+brew install tmux
+```
+
+Also need to install reattach-to-user-namespace:
+
+```sh
+brew install reattach-to-user-namespace
+```
