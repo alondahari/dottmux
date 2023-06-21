@@ -27,8 +27,10 @@ function create_window_at {
 	local __session_name=$2
 	local __window_name=$3
 	local __initial_window_shell=$4
+	local __initial_window_shell_cmd=$5 # shell command to run in the initial window
 
   tmux new-window -t "$__session_name" -c "$__path" -n "$__window_name" -d "$__initial_window_shell"
+  send_command "$__session_name" "$__window_name" "$__initial_window_shell_cmd"
 }
 
 # Send given command to the window identified by the session and window number

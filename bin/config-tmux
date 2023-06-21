@@ -3,4 +3,4 @@
 source ~/.config/tmux/tmux-utils.sh
 
 create_session ~/.config "configtmux" "configs" "zsh" "nvim" 0
-create_session ~/code/private/dotfiles/ "configtmux" "dotfiles" "zsh" "nvim" 0
+create_window_at ~/code/private/dotfiles/ "configtmux" "dotfiles" "zsh" "nvim"
