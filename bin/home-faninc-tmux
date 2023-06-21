@@ -12,6 +12,7 @@ create_window_at ~/code/viva/fan-inc/faninc-terraform "faninc" "terraform" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-k8s "faninc" "k8s" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-lambdas "faninc" "lambdas" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-api/packages/faninc-api-shared "faninc" "faninc-api-shared" "zsh"
+create_window_at ~/code/viva/fan-inc/trading-card-uploader "faninc" "nft-uploader" "zsh" "nvim"
 
 tmux send-keys 'tmux splitw -t 1 -p 10 -c ~/code/viva/fan-inc/faninc-api/' C-j
 tmux send-keys -t 1 'nvim' C-j
