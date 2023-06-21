@@ -1,5 +1,0 @@
-#!/bin/bash
-
-source ~/.config/tmux/tmux-utils.sh
-
-create_session ~/.config/tmux "dottmux" "neovim" "zsh" "nvim" 0
