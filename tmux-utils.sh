@@ -1,3 +1,25 @@
+# Splits a window into nvim on top and terminal at the bottom
+# - session name
+# - window name
+# - percentage of window terminal should take up
+function nvim_with_terminal {
+  local __session_name=$1
+  local __window_name=$2
+  local __term_size=$3
+  select_window "$__session_name" "$__window_name"
+  send_command "$__session_name" "$__window_name" "tmux splitw -t $__session_name:$__window_name -d -p $__term_size"
+  send_command "$__session_name" "$__window_name" "nvim"
+}
+
+function four_way_split {
+  local __session_name=$1
+  local __window_name=$2
+  select_window "$__session_name" "$__window_name"
+  send_command "$__session_name" "$__window_name" "tmux splitw -vd -t $__session_name:$__window_name" C-j
+  send_command "$__session_name" "$__window_name" "tmux splitw -hf -t $__session_name:$__window_name" C-j
+  send_command "$__session_name" "$__window_name" "tmux splitw -v -t $__session_name:$__window_name" C-j
+}
+
 # Attach to the session name provided as the first argument
 # - session name
 function attach_to_session {
@@ -29,7 +51,7 @@ function create_window_at {
 	local __initial_window_shell=$4
 	local __initial_window_shell_cmd=$5 # shell command to run in the initial window
 
-  tmux new-window -a -t "$__session_name" -c "$__path" -n "$__window_name" -d "$__initial_window_shell"
+  tmux new-window -t "$__session_name" -c "$__path" -n "$__window_name" -d "$__initial_window_shell"
   send_command "$__session_name" "$__window_name" "$__initial_window_shell_cmd"
 }
 
@@ -42,7 +64,7 @@ function send_command {
 	local __window_name=$2
 	local __shell_cmd=$3
 
-  tmux send-keys -t "${__session_name}:${__window_name}" "${__shell_cmd}" C-m
+  tmux send-keys -t "${__session_name}:${__window_name}" "${__shell_cmd}" C-j
 }
 
 # Select a window by giving it focus

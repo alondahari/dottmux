@@ -5,23 +5,24 @@ source ~/.config/tmux/tmux-utils.sh
 create_default_session ~/code/viva/fan-inc "faninc" 0
 create_window_at ~/code/viva/fan-inc/faninc-api "faninc" "api-code" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-api "faninc" "api-build" "zsh"
+create_window_at ~/code/viva/fan-inc/faninc-arena-api/ "faninc" "arena-code" "zsh"
+create_window_at ~/code/viva/fan-inc/faninc-arena-api/ "faninc" "arena-build" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-flutter "faninc" "fe-code" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-flutter "faninc" "fe-build" "zsh"
-create_window_at ~/code/viva/fan-inc/faninc-book "faninc" "book" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-terraform "faninc" "terraform" "zsh"
+create_window_at ~/code/viva/fan-inc/faninc-book "faninc" "book" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-k8s "faninc" "k8s" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-lambdas "faninc" "lambdas" "zsh"
-create_window_at ~/code/viva/fan-inc/faninc-api/packages/faninc-api-shared "faninc" "faninc-api-shared" "zsh"
 create_window_at ~/code/viva/fan-inc/trading-card-uploader "faninc" "nft-uploader" "zsh" "nvim"
+create_window_at ~/code/viva/fan-inc/faninc-api/packages/faninc-api-shared "faninc" "api-shared" "zsh"
+create_window_at ~/code/viva/fan-inc/faninc-arena-api/packages/faninc-api-shared "faninc" "arena-shared" "zsh"
 
-tmux send-keys 'tmux splitw -t 1 -p 10 -c ~/code/viva/fan-inc/faninc-api/' C-j
-tmux send-keys -t 1 'nvim' C-j
 
-tmux send-keys 'tmux splitw -vd -t 2 -c ~/code/viva/fan-inc/faninc-api/' C-j
-tmux send-keys 'tmux splitw -hf -t 2 -c ~/code/viva/fan-inc/faninc-api/' C-j
-tmux send-keys 'tmux splitw -v -t 2 -c ~/code/viva/fan-inc/faninc-api/' C-j
+nvim_with_terminal "faninc" "api-code" 10
+nvim_with_terminal "faninc" "arena-code" 10
+nvim_with_terminal "faninc" "fe-code" 10
+ 
+four_way_split "faninc" "api-build"
 
-tmux send-keys 'tmux splitw -t 3 -p 10 -c ~/code/viva/fan-inc/faninc-flutter/' C-j
-tmux send-keys -t 3 'nvim' C-j
-
+select_window "faninc" "api-code"
 attach_to_session "faninc"
