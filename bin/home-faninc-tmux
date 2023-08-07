@@ -17,7 +17,7 @@ create_window_at ~/code/viva/fan-inc/faninc-lambdas "faninc" "lambdas" "zsh"
 create_window_at ~/code/viva/fan-inc/trading-card-uploader "faninc" "nft-uploader" "zsh" "nvim"
 create_window_at ~/code/viva/fan-inc/faninc-api/packages/faninc-api-shared "faninc" "api-shared" "zsh"
 create_window_at ~/code/viva/fan-inc/faninc-arena-api/packages/faninc-api-shared "faninc" "arena-shared" "zsh"
-
+create_window_at ~/code/viva/fan-inc/aws_access_token_rotation "faninc" "key-rotation" "zsh" "nvim"
 
 nvim_with_terminal "faninc" "api-code" 20
 nvim_with_terminal "faninc" "arena-code" 20
