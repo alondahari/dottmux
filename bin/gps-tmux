@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source ~/.config/tmux/tmux-utils.sh
+
+create_default_session ~/code/shared/gps "gps" 0
+create_window_at ~/code/shared/gps "gps" "gps" "zsh"
+
+nvim_with_terminal "gps" "gps" 20
+
