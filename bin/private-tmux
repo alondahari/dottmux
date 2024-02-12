@@ -3,7 +3,7 @@
 source ~/.config/tmux/tmux-utils.sh
 
 create_default_session ~/code/private "private" 0
-create_window_at ~/code/private/jazzdragon.github.io/ "private" "blog" "zsh"
+create_window_at ~/code/private/blog/ "private" "blog" "zsh"
 create_window_at ~/code/private/advent-of-code-2023/ "private" "advent" "zsh"
 create_window_at ~/code/private/rust-by-example "private" "rbe" "zsh"
 create_window_at ~/code/private/rustlings "private" "rustlings" "zsh"
